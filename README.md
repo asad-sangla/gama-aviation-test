@@ -33,7 +33,8 @@ Run following Angular CLI commands for frontend app.
 
 ```text
 1. CD [Base-Directory]\gama-aviation-test\frontend-app\GamaAviationApp
-2. ng serve --prod --open
+2. npm install
+3. ng serve --prod --open
 ```
 
 __NOTE:__  
