@@ -38,4 +38,4 @@ Run following Angular CLI commands for frontend app.
 
 __NOTE:__  
 1. *Frontend project is using Angular 11 please update your angular cli if not same.*  
-2. *.Net Web API is using .NET 5 please update your .NET SKD if not same.*
+2. *.Net Web API is using .NET 5 please update your .NET SDK if not same.*
