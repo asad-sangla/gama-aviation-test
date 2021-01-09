@@ -1,0 +1,102 @@
+<form class="needs-validation"  [formGroup]="gamaAviationForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="card text-center mx-auto mt-3" style="width: 70% !important;">
+    <div class="card-header bg-primary mb-3">
+      <h5 style="color: #ffffff !important;">
+        Save Product Data into Text File
+      </h5>
+    </div>
+
+    <div class="form-row row d-flex justify-content-center align-items-center">
+      <div class="col-md-8 mb-2">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Product Id</span>
+          </div>
+          <input type="number" min="1" class="form-control is-invalid" id="productId" 
+          placeholder="id" formControlName="productId"
+          [ngClass]="{'is-invalid': gamaAviationFormData.productId.invalid && (gamaAviationFormData.productId.dirty || gamaAviationFormData.productId.touched),
+           'is-valid': gamaAviationFormData.productId.valid && (gamaAviationFormData.productId.dirty || gamaAviationFormData.productId.touched)}"
+            required />
+
+           <div class="invalid-feedback"
+          *ngIf="gamaAviationFormData.productId.invalid && (gamaAviationFormData.productId.dirty || gamaAviationFormData.productId.touched)">
+            <span *ngIf="gamaAviationFormData.productId.errors?.required">Product Id is required.</span>
+            <span *ngIf="gamaAviationFormData.productId.errors?.serverError">{{gamaAviationFormData.productId.errors?.serverError}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-row row d-flex justify-content-center align-items-center">
+      <div class="col-md-8 mb-2">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Product Name</span>
+          </div>
+          <input type="text"class="form-control is-invalid" id="productName"
+           placeholder="name" formControlName="productName"
+           [ngClass]="{'is-invalid': gamaAviationFormData.productName.invalid && (gamaAviationFormData.productName.dirty || gamaAviationFormData.productName.touched),
+           'is-valid': gamaAviationFormData.productName.valid && (gamaAviationFormData.productName.dirty || gamaAviationFormData.productName.touched)}"
+           maxlength="255" required />
+
+           <div class="invalid-feedback"
+          *ngIf="gamaAviationFormData.productName.invalid && (gamaAviationFormData.productName.dirty || gamaAviationFormData.productName.touched)">
+            <span *ngIf="gamaAviationFormData.productName.errors?.required">Product name is required.</span>
+            <span *ngIf="gamaAviationFormData.productName.errors?.maxlength">Only 255 characters are allowed for product name.</span>
+            <span *ngIf="gamaAviationFormData.productName.errors?.serverError">{{gamaAviationFormData.productName.errors?.serverError}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row row d-flex justify-content-center align-items-center">
+      <div class="col-md-8 mb-2">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Product Description</span>
+          </div>
+          <input type="text" class="form-control" id="productDescription" 
+          placeholder="description" formControlName="productDescription"
+          [ngClass]="{'is-invalid': gamaAviationFormData.productDescription.invalid && (gamaAviationFormData.productDescription.dirty || gamaAviationFormData.productDescription.touched),
+          'is-valid': gamaAviationFormData.productDescription.valid && (gamaAviationFormData.productDescription.dirty || gamaAviationFormData.productDescription.touched)}"
+          maxlength="255" required />
+
+          <div class="invalid-feedback"
+          *ngIf="gamaAviationFormData.productDescription.invalid && (gamaAviationFormData.productDescription.dirty || gamaAviationFormData.productDescription.touched)">
+            <span *ngIf="gamaAviationFormData.productDescription.errors?.required">Product description is required.</span>
+            <span *ngIf="gamaAviationFormData.productDescription.errors?.maxlength">Only 255 characters are allowed for product description.</span>
+            <span *ngIf="gamaAviationFormData.productDescription.errors?.serverError">{{gamaAviationFormData.productDescription.errors?.serverError}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row row d-flex justify-content-center align-items-center">
+      <div class="col-md-8 mb-2">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Date Created</span>
+          </div>
+          <input type="date" class="form-control is-invalid" id="dateCreated"
+          [ngClass]="{'is-invalid': gamaAviationFormData.dateCreated.invalid && (gamaAviationFormData.dateCreated.dirty || gamaAviationFormData.dateCreated.touched),
+          'is-valid': gamaAviationFormData.dateCreated.valid && (gamaAviationFormData.dateCreated.dirty || gamaAviationFormData.dateCreated.touched)}"
+          formControlName="dateCreated" required />
+
+          <div class="invalid-feedback" 
+          *ngIf="gamaAviationFormData.dateCreated.invalid && (gamaAviationFormData.dateCreated.dirty || gamaAviationFormData.dateCreated.touched)">
+            <span *ngIf="gamaAviationFormData.dateCreated.errors?.required">Date created is required</span>
+            <span *ngIf="gamaAviationFormData.dateCreated.errors?.pattern">Date created is invalid</span>
+            <span *ngIf="gamaAviationFormData.dateCreated.errors?.serverError">{{gamaAviationFormData.dateCreated.errors?.serverError}}</span>
+            {{gamaAviationFormData.dateCreated.errors?.pattern}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer mt-3">
+      <button class="btn btn-primary mr-2">Submit Form</button>
+    </div>
+
+  </div>
+
+</form>
