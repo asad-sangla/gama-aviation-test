@@ -35,3 +35,7 @@ Run following Angular CLI commands for frontend app.
 1. CD [Base-Directory]\gama-aviation-test\frontend-app\GamaAviationApp
 2. ng serve --prod --open
 ```
+
+__NOTE:__  
+1. *Frontend project is using Angular 11 please update your angular cli if not same.*  
+2. *.Net Web API is using .NET 5 please update your .NET SKD if not same.*
